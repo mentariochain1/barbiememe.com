@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Анимация текстового паттерна */
+@keyframes slide-diagonal {
+  0% {
+    transform: rotate(-45deg) translateY(-75%) translateX(-50%);
+  }
+  100% {
+    transform: rotate(-45deg) translateY(-25%) translateX(-50%);
+  }
+}
+
+.animate-slide-diagonal {
+  animation: slide-diagonal 30s linear infinite;
+  color: rgba(255, 105, 180, 0.5);
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+/* Адаптивные стили */
+@media screen and (max-width: 768px) {
+  /* Стили для планшетов и больших смартфонов */
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  p {
+    font-size: 1rem !important;
+  }
+
+  button {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .flex-col {
+    gap: 1rem !important;
+  }
+
+  .character-image {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Стили для смартфонов, включая iPhone 15 */
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  p {
+    font-size: 0.9rem !important;
+  }
+
+  button {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .flex-col {
+    gap: 0.75rem !important;
+  }
+
+  .character-image {
+    width: 200px;
+    height: 200px;
+    bottom: -50px; /* Сдвигаем изображение вниз */
+    right: -50px; /* Сдвигаем изображение вправо */
+  }
+
+  /* Уменьшаем размер изображения Барби на маленьких экранах */
+  .absolute.bottom-0.right-0.z-20 img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  /* Уменьшаем отступ снизу для основного контента */
+  .flex-col {
+    padding-bottom: 150px;
+  }
+}
+
+/* Дополнительные стили для очень маленьких экранов */
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 1.5rem !important;
+  }
+
+  p {
+    font-size: 0.8rem !important;
+  }
+
+  button {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  .absolute.bottom-0.right-0.z-20 img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .character-image {
+    width: 150px;
+    height: 150px;
+    bottom: -30px;
+    right: -30px;
+  }
+
+  /* Уменьшаем отступ снизу для основного контента */
+  .flex-col {
+    padding-bottom: 120px;
+  }
+}
