@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaDollarSign, FaChartBar, FaRoad, FaUsers, FaGamepad, FaBars } from 'react-icons/fa';
+import { FaHome, FaGamepad, FaUser, FaChartBar, FaBars } from 'react-icons/fa';
 
 const PixelNavigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,11 +17,10 @@ const PixelNavigation: React.FC = () => {
   }, []);
 
   const menuItems = [
-    { name: 'About', icon: FaDollarSign, sectionId: 'hero-section' },
+    { name: 'Home', icon: FaHome, sectionId: 'hero' },
     { name: 'Game', icon: FaGamepad, sectionId: 'game-section' },
-    { name: 'Tokenomics', icon: FaChartBar, sectionId: 'tokenomics-section' },
-    { name: 'Roadmap', icon: FaRoad, sectionId: 'roadmap-section' },
-    { name: 'Team', icon: FaUsers, sectionId: 'footer-section' },
+    { name: 'Avatar', icon: FaUser, sectionId: 'avatar-section' },
+    { name: 'Chart', icon: FaChartBar, sectionId: 'chart-section' },
   ];
 
   const navVariants = {
@@ -74,18 +73,6 @@ const PixelNavigation: React.FC = () => {
               </motion.a>
             ))}
           </div>
-          <motion.a
-            href="#dexscrn"
-            className="nav-item bg-[#FF1493] text-white px-4 py-2 rounded-md transition-all duration-300 hover:bg-[#FF69B4] border-2 border-[#4B0082] hover:border-[#8A2BE2] hover:shadow-[0_0_10px_#FF69B4] transform hover:scale-105 flex items-center space-x-2 text-sm lg:text-base"
-            style={{ fontFamily: '"Press Start 2P", cursive' }}
-            variants={itemVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: menuItems.length * 0.1 }}
-          >
-            <FaChartBar className="text-lg xl:text-xl" />
-            <span>DEXSCRN</span>
-          </motion.a>
         </div>
       </div>
       <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden bg-black bg-opacity-90 absolute w-full`}>

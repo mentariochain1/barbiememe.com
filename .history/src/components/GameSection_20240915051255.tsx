@@ -7,34 +7,31 @@ const GameSection: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState(0);
 
   useEffect(() => {
-    const startDate = new Date('2024-09-15T04:00:00+03:00'); // 15 сентября 2024 года, 4:00 по московскому времени
-    const endDate = new Date('2024-09-16T04:00:00+03:00'); // 16 сентября 2024 года, 4:00 по московскому времени
+    const targetDate = new Date('2024-09-15T04:00:00+03:00'); // 15 сентября 2024 года, 4:00 по московскому времени
     
     const updateTimer = () => {
       const now = new Date();
-      if (now < startDate) {
-        // Если текущее время меньше времени начала, показываем время до начала
-        setTimeLeft(Math.floor((startDate.getTime() - now.getTime()) / 1000));
-      } else if (now < endDate) {
-        // Если текущее время между началом и концом, показываем оставшееся время
-        setTimeLeft(Math.floor((endDate.getTime() - now.getTime()) / 1000));
+      const difference = targetDate.getTime() - now.getTime();
+      
+      if (difference > 0) {
+        setTimeLeft(Math.floor(difference / 1000));
       } else {
-        // Если время вышло, показываем 0
         setTimeLeft(0);
       }
     };
 
-    updateTimer(); // Вызываем сразу, чтобы у��тановить начальное значение
+    updateTimer(); // Вызываем сразу, чтобы установить начальное значение
     const timer = setInterval(updateTimer, 1000);
 
     return () => clearInterval(timer);
   }, []);
 
   const formatTime = (time: number) => {
-    const hours = Math.floor(time / 3600);
+    const days = Math.floor(time / (24 * 3600));
+    const hours = Math.floor((time % (24 * 3600)) / 3600);
     const minutes = Math.floor((time % 3600) / 60);
     const seconds = time % 60;
-    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    return `${days}d ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   };
 
   const containerVariants = {
@@ -50,7 +47,7 @@ const GameSection: React.FC = () => {
   return (
     <motion.div
       id="game-section"
-      className="w-full py-16 px-4 bg-gradient-to-br from-purple-900 via-pink-800 to-purple-900 relative overflow-hidden"
+      className="w-full py-16 px-4 bg-gradient-to-br from-purple-900 via-pink-800 to-purple-900 relative overflow-hidden pixel-font"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -60,10 +57,6 @@ const GameSection: React.FC = () => {
         <motion.h2
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold mb-8 sega-barbie-title text-pink-300 animate-pulse"
           variants={itemVariants}
-          style={{ 
-            textShadow: '2px 2px 0px #FF1493, -2px -2px 0px #4B0082',
-            fontFamily: '"Press Start 2P", cursive'
-          }}
         >
           Play, Score, and Slay for $BARBIE!
         </motion.h2>
@@ -82,22 +75,16 @@ const GameSection: React.FC = () => {
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white pixel-font animate-pulse mb-8">
             {formatTime(timeLeft)}
           </div>
-          <a 
-            href="https://t.me/barbie_runner_bot/barbierunner" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <button 
+            className="px-8 py-4 bg-pink-500 text-white font-bold text-lg rounded-md transition-all duration-300 hover:scale-105 hover:brightness-110 pixel-font"
+            style={{ 
+              boxShadow: '0 0 0 4px #FF1493, 0 0 0 8px #4B0082, 0 6px 0 8px #4B0082',
+              textShadow: '2px 2px 0px #4B0082',
+              border: '4px solid #FF69B4'
+            }}
           >
-            <button 
-              className="px-8 py-4 bg-pink-500 text-white font-bold text-lg rounded-md transition-all duration-300 hover:scale-105 hover:brightness-110 pixel-font"
-              style={{ 
-                boxShadow: '0 0 0 4px #FF1493, 0 0 0 8px #4B0082, 0 6px 0 8px #4B0082',
-                textShadow: '2px 2px 0px #4B0082',
-                border: '4px solid #FF69B4'
-              }}
-            >
-              Join the $BARBIE Bash!
-            </button>
-          </a>
+            Join the $BARBIE Bash!
+          </button>
         </motion.div>
       </div>
     </motion.div>

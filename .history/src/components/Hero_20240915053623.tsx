@@ -58,27 +58,13 @@ const Hero: React.FC = () => {
         style={{ maxWidth: 'none' }}
       />
       <motion.div className="relative z-10 text-center" variants={itemVariants}>
-        <h1 className="mb-6 animate-fade-in">
-          <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-2 text-white sega-barbie-title">Welcome to</span>
-          <span 
-            className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl cursor-pointer relative text-pink-300 hover:text-pink-200 transition-colors duration-300 sega-barbie-title"
-            onClick={() => new Audio('/sounds/barbie-sound.mp3').play()}
-            style={{
-              textShadow: '4px 4px 0px #FF1493, -4px -4px 0px #4B0082, 0 0 20px #FF69B4',
-              WebkitTextStroke: '2px #FF1493',
-              letterSpacing: '0.05em',
-              transform: 'skew(-5deg)',
-            }}
-          >
+        <h1 className="sega-barbie-title mb-6 animate-fade-in">
+          <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-2 text-white">Welcome to</span>
+          <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl cursor-pointer relative text-pink-300 hover:text-pink-200 transition-colors duration-300"
+                onClick={() => new Audio('/sounds/barbie-sound.mp3').play()}>
             $Barbie
           </span>
-          <span 
-            className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2 text-purple-300 sega-barbie-title"
-            style={{
-              textShadow: '2px 2px 0px #8A2BE2, -2px -2px 0px #4B0082',
-              letterSpacing: '0.1em',
-            }}
-          >
+          <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2 text-purple-300">
             World
           </span>
         </h1>

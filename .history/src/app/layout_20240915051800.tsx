@@ -6,7 +6,6 @@ const pressStart2P = Press_Start_2P({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-press-start-2p',
 })
 
 export const metadata: Metadata = {
@@ -20,13 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${pressStart2P.variable} font-sans`}>
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={pressStart2P.className}>
       <body>{children}</body>
     </html>
   );

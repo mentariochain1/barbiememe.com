@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-press-start-2p)', 'monospace'],
+        sans: ['"Press Start 2P"', 'cursive'],
       },
     },
   },

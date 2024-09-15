@@ -24,7 +24,7 @@ const GameSection: React.FC = () => {
       }
     };
 
-    updateTimer(); // Вызываем сразу, чтобы у��тановить начальное значение
+    updateTimer(); // Вызываем сразу, чтобы установить начальное значение
     const timer = setInterval(updateTimer, 1000);
 
     return () => clearInterval(timer);
@@ -82,22 +82,16 @@ const GameSection: React.FC = () => {
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white pixel-font animate-pulse mb-8">
             {formatTime(timeLeft)}
           </div>
-          <a 
-            href="https://t.me/barbie_runner_bot/barbierunner" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <button 
+            className="px-8 py-4 bg-pink-500 text-white font-bold text-lg rounded-md transition-all duration-300 hover:scale-105 hover:brightness-110 pixel-font"
+            style={{ 
+              boxShadow: '0 0 0 4px #FF1493, 0 0 0 8px #4B0082, 0 6px 0 8px #4B0082',
+              textShadow: '2px 2px 0px #4B0082',
+              border: '4px solid #FF69B4'
+            }}
           >
-            <button 
-              className="px-8 py-4 bg-pink-500 text-white font-bold text-lg rounded-md transition-all duration-300 hover:scale-105 hover:brightness-110 pixel-font"
-              style={{ 
-                boxShadow: '0 0 0 4px #FF1493, 0 0 0 8px #4B0082, 0 6px 0 8px #4B0082',
-                textShadow: '2px 2px 0px #4B0082',
-                border: '4px solid #FF69B4'
-              }}
-            >
-              Join the $BARBIE Bash!
-            </button>
-          </a>
+            Join the $BARBIE Bash!
+          </button>
         </motion.div>
       </div>
     </motion.div>

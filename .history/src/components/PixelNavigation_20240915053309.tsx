@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaDollarSign, FaChartBar, FaRoad, FaUsers, FaGamepad, FaBars } from 'react-icons/fa';
+import { FaDollarSign, FaChartBar, FaRoad, FaUsers, FaShoppingCart, FaGamepad, FaBars } from 'react-icons/fa';
 
 const PixelNavigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -75,7 +75,7 @@ const PixelNavigation: React.FC = () => {
             ))}
           </div>
           <motion.a
-            href="#dexscrn"
+            href="#buy"
             className="nav-item bg-[#FF1493] text-white px-4 py-2 rounded-md transition-all duration-300 hover:bg-[#FF69B4] border-2 border-[#4B0082] hover:border-[#8A2BE2] hover:shadow-[0_0_10px_#FF69B4] transform hover:scale-105 flex items-center space-x-2 text-sm lg:text-base"
             style={{ fontFamily: '"Press Start 2P", cursive' }}
             variants={itemVariants}
@@ -83,8 +83,8 @@ const PixelNavigation: React.FC = () => {
             animate="visible"
             transition={{ delay: menuItems.length * 0.1 }}
           >
-            <FaChartBar className="text-lg xl:text-xl" />
-            <span>DEXSCRN</span>
+            <FaShoppingCart className="text-lg xl:text-xl" />
+            <span>Buy $BARBIE</span>
           </motion.a>
         </div>
       </div>

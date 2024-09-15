@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaDollarSign, FaChartBar, FaRoad, FaUsers, FaGamepad, FaBars } from 'react-icons/fa';
+import { FaDollarSign, FaChartBar, FaRoad, FaUsers, FaShoppingCart, FaGamepad, FaBars } from 'react-icons/fa';
 
 const PixelNavigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
