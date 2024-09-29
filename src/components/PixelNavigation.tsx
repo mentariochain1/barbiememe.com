@@ -76,7 +76,7 @@ const PixelNavigation: React.FC = () => {
           </div>
           <div className="flex items-center space-x-4">
             <motion.a
-              href="https://pump.fun/6trTHieDEBJb8t8v1Zcdsmgvvh7CbtXKu8xg3jSzDmZJ"
+              href="https://pump.fun/34zbMfaU1DcpgW3EzJAmHarXGT5yaTUMq1Wfdk6zpump"
               className="nav-item bg-[#FF69B4] text-white px-4 py-2 rounded-md transition-all duration-300 hover:bg-[#FF1493] border-2 border-[#4B0082] hover:border-[#8A2BE2] hover:shadow-[0_0_10px_#FF69B4] transform hover:scale-105 flex items-center space-x-2 text-sm lg:text-base"
               style={{ fontFamily: '"Press Start 2P", cursive' }}
               variants={itemVariants}
