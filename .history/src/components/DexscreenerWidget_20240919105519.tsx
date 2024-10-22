@@ -25,9 +25,9 @@ const DexscreenerWidget: React.FC = () => {
                border: '4px solid #FF69B4'
              }}>
           <iframe
-            src="https://gaspump.fun/34zbMfaU1DcpgW3EzJAmHarXGT5yaTUMq1Wfdk6zpump"
+            src="https://pump.fun/6trTHieDEBJb8t8v1Zcdsmgvvh7CbtXKu8xg3jSzDmZJ"
             style={{width: '100%', height: '600px', border: '0'}}
-            title="GASPUMP Chart"
+            title="Pumpfan Chart"
           />
         </div>
       </div>

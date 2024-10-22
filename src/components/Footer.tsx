@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           Join the Barbie Party!
         </h3>
         <div className="flex justify-center space-x-6 mb-12">
-          <a href="https://x.com/BarbieMemeSol" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-300">
+          <a href="https://x.com/BarbieMemeCoin" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-300">
             <FaXTwitter size={36} />
           </a>
           <a href="https://t.me/BarbiePortal" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-300">

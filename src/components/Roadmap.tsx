@@ -14,8 +14,8 @@ interface RoadmapItem {
 const roadmapData: RoadmapItem[] = [
   {
     phase: "Phase 1: Launch & Liquidity",
-    title: "Raydium Listing",
-    description: "Initial DEX offering on Raydium, establishing strong liquidity pool for $BARBIE",
+    title: "DEDUST Listing",
+    description: "Initial DEX offering on DEDUST, establishing strong liquidity pool for $BARBIE",
     icon: "🚀"
   },
   {
@@ -77,6 +77,13 @@ const Roadmap: React.FC = () => {
         height={550}
         className={`pixelated absolute right-0 top-1/2 transform -translate-y-1/2 transition-all duration-300 ${isMobile ? 'opacity-10 scale-75' : 'opacity-30'}`}
         style={{ maxWidth: 'none' }}
+      />
+      <Image
+        src="/assets/tonlogo2.svg"
+        alt="TON Logo"
+        width={200}
+        height={200}
+        className={`absolute ${isMobile ? 'left-4 top-20' : 'left-20 top-1/2 -translate-y-1/2'} transition-all duration-300`}
       />
       <div className="max-w-7xl mx-auto relative z-10">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold mb-12 md:mb-16 sega-barbie-title text-pink-500 animate-pulse">

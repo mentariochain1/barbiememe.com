@@ -27,4 +27,26 @@ body {
   font-family: var(--font-press-start-2p), monospace;
 }
 
+.ton-background {
+  background: linear-gradient(135deg, #0088CC, #FF69B4);
+  animation: gradientAnimation 10s ease infinite;
+  background-size: 400% 400%;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.calm-background {
+  background: linear-gradient(135deg, #0088CC, #FF69B4);
+}
+
 /* Остальные стили... */

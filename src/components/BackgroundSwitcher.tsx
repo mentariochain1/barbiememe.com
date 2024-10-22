@@ -9,7 +9,7 @@ interface BackgroundSwitcherProps {
 
 const BackgroundSwitcher: React.FC<BackgroundSwitcherProps> = ({ children, isCalmBackground }) => {
   return (
-    <div className={isCalmBackground ? 'calm-background' : 'dynamic-background'}>
+    <div className={isCalmBackground ? 'calm-background' : 'ton-background'}>
       {children}
     </div>
   );

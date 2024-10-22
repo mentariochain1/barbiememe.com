@@ -12,10 +12,11 @@ const SegaShowcase = dynamic(() => import('../components/SegaShowcase'), { ssr: 
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col relative">
-      <BackgroundSwitcher>
+    <BackgroundSwitcher>
+      <div className="min-h-screen flex flex-col relative">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-pink-400 via-purple-400 via-pink-500 via-rose-400 to-fuchsia-500 animate-gradient"></div>
+          {/* Удалите или закомментируйте старый градиент */}
+          {/* <div className="absolute inset-0 bg-gradient-to-br from-pink-400 via-purple-400 via-pink-500 via-rose-400 to-fuchsia-500 animate-gradient"></div> */}
           <div className="absolute inset-0 opacity-15" style={{
             backgroundImage: `
               linear-gradient(to right, #FFFFFF 1px, transparent 1px),
@@ -66,7 +67,7 @@ export default function Home() {
             <Footer />
           </div>
         </div>
-      </BackgroundSwitcher>
-    </div>
+      </div>
+    </BackgroundSwitcher>
   );
 }

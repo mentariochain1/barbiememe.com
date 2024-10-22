@@ -24,7 +24,7 @@ const GameSection: React.FC = () => {
       }
     };
 
-    updateTimer(); // Вызываем сразу, чтобы у��тановить начальное значение
+    updateTimer(); // Вызываем сразу, чтобы установить начальное значение
     const timer = setInterval(updateTimer, 1000);
 
     return () => clearInterval(timer);
@@ -50,15 +50,20 @@ const GameSection: React.FC = () => {
   return (
     <motion.div
       id="game-section"
-      className="w-full py-16 px-4 bg-gradient-to-br from-purple-900 via-pink-800 to-purple-900 relative overflow-hidden"
+      className="w-full py-16 px-4 relative overflow-hidden"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
+      style={{
+        background: 'linear-gradient(45deg, #0088CC, #FF69B4, #0088CC)',
+        backgroundSize: '200% 200%',
+        animation: 'gradientAnimation 15s ease infinite',
+      }}
     >
       <div className="absolute inset-0 bg-pattern opacity-10"></div>
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold mb-8 sega-barbie-title text-pink-300 animate-pulse"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold mb-8 sega-barbie-title text-white animate-pulse"
           variants={itemVariants}
           style={{ 
             textShadow: '2px 2px 0px #FF1493, -2px -2px 0px #4B0082',
@@ -68,15 +73,15 @@ const GameSection: React.FC = () => {
           Play, Score, and Slay for $BARBIE!
         </motion.h2>
         <motion.div className="text-center mb-12" variants={itemVariants}>
-          <p className="mb-6 text-base sm:text-lg md:text-xl lg:text-2xl text-pink-100 pixel-font">
+          <p className="mb-6 text-base sm:text-lg md:text-xl lg:text-2xl text-white pixel-font">
             Step into the glittery arena, dolls! It&apos;s time to turn those $BARBIE dreams into a high-score reality!
           </p>
-          <p className="mb-8 text-base sm:text-lg md:text-xl lg:text-2xl text-pink-100 pixel-font">
+          <p className="mb-8 text-base sm:text-lg md:text-xl lg:text-2xl text-white pixel-font">
             Rack up those points like they&apos;re designer shoes! The player with the highest score doesn&apos;t just win – they strut away with a fabulous $BARBIE jackpot! Are you ready to be the Barbie boss of the leaderboard?
           </p>
         </motion.div>
         <motion.div className="text-center" variants={itemVariants}>
-          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-pink-300 pixel-font mb-4">
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white pixel-font mb-4">
             Next $BARBIE bonanza starts in:
           </p>
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white pixel-font animate-pulse mb-8">

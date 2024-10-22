@@ -57,6 +57,13 @@ const Hero: React.FC = () => {
         className={`pixelated absolute ${deviceType === 'mobile' ? 'left-1/2 -translate-x-1/2 top-1/4 -translate-y-1/4 scale-75 opacity-30' : 'left-0 top-1/2 -translate-y-1/2'} transition-all duration-300`}
         style={{ maxWidth: 'none' }}
       />
+      <Image
+        src="/assets/tonlogo2.svg"
+        alt="TON Logo"
+        width={200}
+        height={200}
+        className={`absolute ${deviceType === 'mobile' ? 'right-4 top-20' : 'right-20 top-1/2 -translate-y-1/2'} transition-all duration-300`}
+      />
       <motion.div className="relative z-10 text-center" variants={itemVariants}>
         <h1 className="mb-6 animate-fade-in">
           <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-2 text-white sega-barbie-title">Welcome to</span>
@@ -119,7 +126,7 @@ const Hero: React.FC = () => {
             <FaTelegram size={24} />
           </button>
         </a>
-        <a href="https://x.com/BarbieMemeSol" target="_blank" rel="noopener noreferrer" className="flex-1">
+        <a href="https://x.com/BarbieMemeCoin" target="_blank" rel="noopener noreferrer" className="flex-1">
           <button className="w-full h-full bg-sky-500 text-white p-4 hover:bg-sky-600 transition-colors duration-300" style={buttonStyle}>
             <FaXTwitter size={24} />
           </button>
