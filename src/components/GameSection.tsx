@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 
 const GameSection: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState(0);
